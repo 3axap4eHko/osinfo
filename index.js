@@ -31,11 +31,12 @@ function toMetric(value, metric) {
 module.exports = function (format, {memMetric, diskMetric}) {
 
   const name = Os.type();
-  const disks = diskSize().map( ({disk, total, used, free}) => ({
+  const disks = diskSize().map( ({disk, total, used, free, path}) => ({
     disk,
     total: toMetric(total, diskMetric),
     used: toMetric(used, diskMetric),
-    free: toMetric(free, diskMetric)
+    free: toMetric(free, diskMetric),
+    path
   }));
 
   const data = {
