@@ -14,7 +14,7 @@ osinfo --help
 
 Get Os Info in xml format
 ``` bash
-osinfo -f xml
+osinfo -f yaml
 ```
 Result structure
 ``` yaml
@@ -23,26 +23,30 @@ platform:   # platform info
   type:         # platform type
   release:      # release version
   name:         # platform name
+  endianness:   # OS endianness
 
 disks:      # array of disks
   - disk:       # name/label
     total:      # total size
     free:       # free space
     path:       # drive path
+
 cpus:       # cpus info
   list:         # array of cpus
     - model:        # model
       speed:        # speed
       times:        # times
-  loadavg:  # cpus load avg (not for Window platforms)
+  loadavg:  # cpus load avg (not for Windows platforms)
+
 memory:     # RAM info
   free:         # free
   total:        # total
-env:        # environment info
-  endianness:   # OS endianness
+
+environment:    # environment info
   vars:         # Environment variables
   homedir:      # home directory
   hostname:     # hostname
+
 networks:   # network interfaces
   name:         # array of available IPv6 and IPv4 network interfaces for network name
     - address:      # IP address

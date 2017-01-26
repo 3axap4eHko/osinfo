@@ -65,9 +65,9 @@ function darwinSize() {
 function winSize() {
 
     return parse(execSync('wmic logicaldisk list brief', {encoding: 'utf8'}))
-        .filter(([,type]) => /(3)/.test(type))
+        .filter(([, type]) => /(3)/.test(type))
         .map(row => {
-            const [path,,free,,total,disk] = row;
+            const [path, , free, , total, disk] = row;
             return {
                 disk: disk || '(no label)',
                 total: parseInt(total),
