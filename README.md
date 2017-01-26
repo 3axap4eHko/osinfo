@@ -16,6 +16,12 @@ Get Os Info in xml format
 ``` bash
 osinfo -f xml
 ```
+Result structure
+``` javascript
+{
+
+}
+```
 
 ## License
 

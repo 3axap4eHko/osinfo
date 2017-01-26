@@ -54,9 +54,9 @@ module.exports = function (format, {memMetric, diskMetric}) {
       list: Os.cpus(),
       loadavg: Os.loadavg(),
     },
-    mem: {
-      freemem: toMetric(Os.freemem(), memMetric),
-      totalmem: toMetric(Os.totalmem(), memMetric)
+    memory: {
+      free: toMetric(Os.freemem(), memMetric),
+      total: toMetric(Os.totalmem(), memMetric)
     },
     env: {
       endianness: Os.endianness(),
