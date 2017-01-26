@@ -1,6 +1,6 @@
 {
   "name": "osinfo",
-  "version": "0.3.0",
+  "version": "0.5.0",
   "description": "Information about OS",
   "main": "index.js",
   "bin": {
