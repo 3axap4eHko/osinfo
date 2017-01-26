@@ -21,20 +21,23 @@ const metrics = {
   G: Math.pow(1000, 3),
   M: Math.pow(1000, 2),
   k: 1000,
-  b: 1,
+  B: 1,
 };
 
 function toMetric(value, metric) {
-  return `${Math.round(value / metrics[metric])}${metric}`;
+  const metricValue = Math.round(value / metrics[metric]);
+  if (metricValue) {
+      return `${metricValue}${metric}`;
+  }
+  return metricValue;
 }
 
 module.exports = function (format, {memMetric, diskMetric}) {
 
   const name = Os.type();
-  const disks = diskSize().map( ({disk, total, used, free, path}) => ({
+  const disks = diskSize().map( ({disk, total, free, path}) => ({
     disk,
     total: toMetric(total, diskMetric),
-    used: toMetric(used, diskMetric),
     free: toMetric(free, diskMetric),
     path
   }));
