@@ -1,6 +1,6 @@
 {
   "name": "osinfo",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Information about OS",
   "main": "index.js",
   "bin": {
